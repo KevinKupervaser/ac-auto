@@ -34,12 +34,6 @@ const AdminSidebar = ({ children }: Props) => {
             <hr className="w-full bg-gray-700 h-[0.10rem]" />
           </li>
         </ul>
-
-        <div>
-          <SignOutButton>
-            <div className="cursor-pointer text-gray-800">Logout</div>
-          </SignOutButton>
-        </div>
       </div>
       <div className="max-w-screen-xl mx-auto flex-1 p-4 overflow-y-auto">
         {children}

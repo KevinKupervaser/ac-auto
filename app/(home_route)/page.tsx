@@ -8,7 +8,6 @@ import { Suspense } from "react";
 import { CircleLoader } from "react-spinners";
 import FilterProductBar from "../components/FilterProductBar";
 import BannerSlider from "../components/BannerSlider";
-import banner from "/public/toyota-corolla-cross-gr-sport-front-angle.webp";
 
 // deployment
 export const dynamic = "force-dynamic";
@@ -76,26 +75,28 @@ export default async function Home() {
   const products = Object.values(parsedProducts);
 
   return (
-    <div className="mx-auto lg:max-w-[1000px]">
+    <>
       <BannerSlider />
-      <FilterProductBar rest={{}} />
-      <Suspense
-        fallback={
-          <div className="flex justify-center">
-            <CircleLoader color="#36d7b7" />
+      <div className="mx-auto lg:max-w-[1000px]">
+        <FilterProductBar rest={{}} />
+        <Suspense
+          fallback={
+            <div className="flex justify-center">
+              <CircleLoader color="#36d7b7" />
+            </div>
+          }
+        >
+          <div className="py-4 space-y-4">
+            <GridView>
+              {products.map((product) => {
+                return (
+                  <ProductCard key={product.id} product={product} rest={{}} />
+                );
+              })}
+            </GridView>
           </div>
-        }
-      >
-        <div className="py-4 space-y-4">
-          <GridView>
-            {products.map((product) => {
-              return (
-                <ProductCard key={product.id} product={product} rest={{}} />
-              );
-            })}
-          </GridView>
-        </div>
-      </Suspense>
-    </div>
+        </Suspense>
+      </div>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import BannerSlider from "@/app/components/BannerSlider";
 import FilterProductBar from "@/app/components/FilterProductBar";
 import GridView from "@/app/components/GridView";
 import MasonryGridGallery from "@/app/components/MasonryGridGallery";

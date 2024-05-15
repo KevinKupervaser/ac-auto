@@ -10,7 +10,10 @@ interface Props {
 const searchProducts = async (query: string) => {
   await startDb();
   const products = await ProductModel.find({
-    marca: { $regex: query, $options: "i" },
+    $or: [
+      { marca: { $regex: query, $options: "i" } },
+      { modelo: { $regex: query, $options: "i" } },
+    ],
   });
 
   const results = products.map((product) => {

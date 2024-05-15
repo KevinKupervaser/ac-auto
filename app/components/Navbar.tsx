@@ -11,7 +11,12 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-end items-center bg-gray-700 text-white gap-4">
+      <div className="hidden lg:flex justify-end items-center bg-gray-700 text-white gap-4">
+        {loggedIn && (
+          <div className="text-xs">
+            <Link href="/">Inicio</Link>
+          </div>
+        )}
         {loggedIn && (
           <div className="text-xs">
             <Link href="/products">Autos</Link>
@@ -27,16 +32,18 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className="bg-black flex items-center justify-center">
-        <div className="flex items-center">
-          <Image
-            src={Logo}
-            alt="logo"
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
-        </div>
+      <div className="bg-black hidden lg:flex items-center justify-center">
+        <Link href={"/"}>
+          <div className="flex items-center">
+            <Image
+              src={Logo}
+              alt="logo"
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
+          </div>
+        </Link>
       </div>
     </>
 

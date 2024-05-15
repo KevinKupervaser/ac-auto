@@ -21,7 +21,7 @@ export default function SearchForm({ rest }: Props) {
       className="w-full md:w-72"
     >
       <Input
-        label="Bucar por Fabricante"
+        label="Buscar"
         icon={
           <button>
             <MagnifyingGlassIcon className="h-5 w-5" />

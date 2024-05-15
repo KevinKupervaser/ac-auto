@@ -25,7 +25,7 @@ const FilterProductBar = ({ rest }: Props) => {
   }, []);
 
   return (
-    <div className="max-w-[300px] mx-auto">
+    <div className="max-w-[300px] mx-auto mt-8">
       <Select
         label="Fabricante"
         {...rest}

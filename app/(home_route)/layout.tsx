@@ -1,5 +1,5 @@
 import React from "react";
-import FilterProductBar from "../components/FilterProductBar";
+
 
 interface Props {
   children: React.ReactNode;
