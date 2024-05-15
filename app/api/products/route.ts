@@ -9,7 +9,7 @@ export async function GET() {
   await startDb();
 
   try {
-    const products = await ProductModel.find().sort("-createdAt").limit(10);
+    const products = await ProductModel.find().sort("-createdAt").limit(10).maxTimeMS(30000);
     return NextResponse.json(products);
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch products" });
